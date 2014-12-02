@@ -9,8 +9,14 @@ class SensorEvents(bjsonrpc.handlers.BaseHandler):
         pub.sendMessage('change_position', data=position_data)
         return {"message":"got it"}
 
+sensor_events = None
 def listen():
+    global sensor_events 
     sensor_events = bjsonrpc.createserver(host="0.0.0.0", port=9001, handler_factory=SensorEvents)
     thread = threading.Thread(target=sensor_events.serve)
     thread.deamon = True
     thread.start()
+
+
+def stop():
+    sensor_events.stop()

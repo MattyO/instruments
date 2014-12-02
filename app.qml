@@ -7,16 +7,13 @@ import "screens"
 
 Window {
     id: root
-    width: 800
     height:1280
+    width: 800
 
     ColumnLayout{
       anchors.fill: parent
 
       Heading {
-      }
-      Label {
-        text: "test text"
       }
     }
 }
