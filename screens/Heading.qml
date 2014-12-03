@@ -16,26 +16,28 @@ Heading {
 
       InstReading{
         title: "Heading"
-        reading: "100"
+        reading: "100°"
       }
 
       InstReading{
         title: "Speed"
         reading: "5.34"
+        units: 'kts'
       }
 
       InstReading{
         title: "Position"
-        reading: "?"
+        reading: "42°23'51'' W <br/> 82°42'22'' E"
       }
 
       InstReading{
         title: "Wind Speed"
         reading: "23"
+        units: 'kts'
       }
       InstReading{
         title: "Wind Direction"
-        reading: "345"
+        reading: "345°"
       }
     }
   }
