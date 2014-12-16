@@ -22,23 +22,23 @@ Heading {
 
       InstReading{
         title: "Speed"
-        reading: "5.34"
+        reading: speed
         units: 'kts'
       }
 
       InstReading{
         title: "Position"
-        reading: "42°23'51'' W <br/> 82°42'22'' E"
+        reading: lat + "<br/>" + lng
       }
 
       InstReading{
         title: "Wind Speed"
-        reading: "23"
+        reading:  wind_speed
         units: 'kts'
       }
       InstReading{
         title: "Wind Direction"
-        reading: "345°"
+        reading: wind_direction 
       }
     }
   }
