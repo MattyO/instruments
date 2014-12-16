@@ -15,8 +15,9 @@ Heading {
       anchors.fill: parent
 
       InstReading{
+        automation_type: 'heading'
         title: "Heading"
-        reading: "100°"
+        reading: heading
       }
 
       InstReading{

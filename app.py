@@ -1,29 +1,46 @@
 import signal
 import os, sys
+import time
 
 import PyQt5.Qt as Qt
 
 import screens.src.heading
 import events
+import pqaut.server
+
+import events
 
 sys.path.append(os.path.abspath('.'))
+app = None
+window=None
 
-app = Qt.QApplication(sys.argv)
+def run():
+    global app
+    global window
 
-Qt.qmlRegisterType(screens.src.heading.Heading, 'Screens', 1, 0, 'Heading')
+    app = Qt.QApplication(sys.argv)
 
-engine = Qt.QQmlEngine()
-component = Qt.QQmlComponent(engine)
-component.loadUrl(Qt.QUrl('app.qml'))
-for error in component.errors():
-    print error.description()
+    Qt.qmlRegisterType(screens.src.heading.Heading, 'Screens', 1, 0, 'Heading')
 
-window = component.create()
-for error in component.errors():
-    print error.description()
-window.show()
+    engine = Qt.QQmlEngine()
+    component = Qt.QQmlComponent(engine)
+    component.loadUrl(Qt.QUrl('app.qml'))
+    for error in component.errors():
+        print error.description()
 
-#events.listen()
-sys.exit(app.exec_())
+    window = component.create()
+    for error in component.errors():
+        print error.description()
+    window.show()
+    #pqaut.server.start_automation_server()
+
+    t = events.QSensorThread()
+    t.start()
+    sys.exit(app.exec_())
 
 
+def exit():
+    app.exec_()
+
+if __name__ == "__main__":
+    run()

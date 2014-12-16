@@ -5,6 +5,7 @@ Item{
   property string title
   property string reading
   property string units
+  property string automation_type
 
   width: 400
   height: 200
