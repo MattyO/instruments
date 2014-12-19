@@ -12,8 +12,23 @@ Window {
 
     ColumnLayout{
       anchors.fill: parent
+      Rectangle {
+        anchors.fill: parent
+        color: "black"
+        GridLayout{
+        columns: 2
+        anchors.fill: parent
+          Heading {}
 
-      Heading {
+          Speed {}
+
+          Position {}
+
+          WindSpeed {}
+
+          WindDirection {}
+        }
+
       }
     }
 }

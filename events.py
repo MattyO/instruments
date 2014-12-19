@@ -2,12 +2,11 @@ import bjsonrpc
 import bjsonrpc.handlers
 import PyQt5.Qt as Qt
 
-import screens.src.heading
+import pubsub
 
 class SensorEvents(bjsonrpc.handlers.BaseHandler):
     def change_position(self, position_data):
-        screens.src.heading.ps.trigger.emit(position_data)
-
+        pubsub.ps.change_position.emit(position_data)
 
 class QSensorThread(Qt.QThread):
     def run(self):

@@ -5,6 +5,10 @@ import time
 import PyQt5.Qt as Qt
 
 import screens.src.heading
+import screens.src.speed
+import screens.src.position
+import screens.src.wind_direction
+import screens.src.wind_speed
 import events
 import pqaut.server
 
@@ -21,6 +25,10 @@ def run():
     app = Qt.QApplication(sys.argv)
 
     Qt.qmlRegisterType(screens.src.heading.Heading, 'Screens', 1, 0, 'Heading')
+    Qt.qmlRegisterType(screens.src.speed.Speed, 'Screens', 1, 0, 'Speed')
+    Qt.qmlRegisterType(screens.src.position.Position, 'Screens', 1, 0, 'Position')
+    Qt.qmlRegisterType(screens.src.wind_speed.WindSpeed, 'Screens', 1, 0, 'WindSpeed')
+    Qt.qmlRegisterType(screens.src.wind_direction.WindDirection, 'Screens', 1, 0, 'WindDirection')
 
     engine = Qt.QQmlEngine()
     component = Qt.QQmlComponent(engine)
