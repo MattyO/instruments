@@ -6,29 +6,37 @@ import QtQuick.Layouts 1.1
 import "screens"
 
 Window {
-    id: root
-    height:1280
-    width: 800
+  id: root
+  height:1280
+  width: 800
 
-    ColumnLayout{
+  Rectangle {
+    anchors.fill: parent
+    color: "black"
+  }
+
+  ColumnLayout{
+    anchors.fill: parent
+    Compass {
+      Layout.alignment: Qt.AlignCenter
+    }
+
+    Item{
+      Layout.fillWidth: true
+      Layout.fillHeight: true
+      GridLayout{
+      columns: 2
       anchors.fill: parent
-      Rectangle {
-        anchors.fill: parent
-        color: "black"
-        GridLayout{
-        columns: 2
-        anchors.fill: parent
-          Heading {}
+        Heading {}
 
-          Speed {}
+        Speed {}
 
-          Position {}
+        Position {}
 
-          WindSpeed {}
+        WindSpeed {}
 
-          WindDirection {}
-        }
-
+        WindDirection {}
       }
     }
+  }
 }

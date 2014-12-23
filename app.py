@@ -9,6 +9,7 @@ import screens.src.speed
 import screens.src.position
 import screens.src.wind_direction
 import screens.src.wind_speed
+import screens.src.compass
 import events
 import pqaut.server
 
@@ -29,6 +30,7 @@ def run():
     Qt.qmlRegisterType(screens.src.position.Position, 'Screens', 1, 0, 'Position')
     Qt.qmlRegisterType(screens.src.wind_speed.WindSpeed, 'Screens', 1, 0, 'WindSpeed')
     Qt.qmlRegisterType(screens.src.wind_direction.WindDirection, 'Screens', 1, 0, 'WindDirection')
+    Qt.qmlRegisterType(screens.src.compass.Compass, 'Screens', 1, 0, 'Compass')
 
     engine = Qt.QQmlEngine()
     component = Qt.QQmlComponent(engine)
