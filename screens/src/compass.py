@@ -1,6 +1,4 @@
 import PyQt5.Qt as Qt
-from PyQt5.Qt import pyqtProperty
-from PyQt5.QtCore import pyqtSignal
 
 import pubsub
 
@@ -17,7 +15,7 @@ class Compass(Qt.QQuickItem):
         if 'heading' in data:
             self.heading = data.get('heading', 0)
 
-    @pyqtProperty(float, notify=heading_changed)
+    @Qt.pyqtProperty(float, notify=heading_changed)
     def heading(self):
         return self._heading
 
@@ -26,7 +24,7 @@ class Compass(Qt.QQuickItem):
         self._heading = value
         self.heading_changed.emit()
 
-    @pyqtProperty('QStringList', notify=heading_changed)
+    @Qt.pyqtProperty('QStringList', notify=heading_changed)
     def foo(self):
         ones = self.heading % 10
         if self.heading % 10 == 0:

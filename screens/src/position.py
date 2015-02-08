@@ -5,6 +5,11 @@ from PyQt5.QtCore import pyqtSignal
 
 import pubsub
 
+def cardinal_direction(lat_or_lng, pos_direction, neg_direction):
+    if lat_or_lng > 0:
+        return pos_direction
+    else:
+        return neg_direction
 
 class Position(Qt.QQuickItem):
     lat_changed= Qt.pyqtSignal()
@@ -23,16 +28,17 @@ class Position(Qt.QQuickItem):
             self.lng= data.get('lng', 0)
 
     def convert_position(self, lat_or_lng):
-        def foo(bar):
+        lat_or_lng = abs(lat_or_lng)
+        def decimal_to_sixtieth(bar):
             return (bar - int(bar)) * 60
 
-        minutes = foo(lat_or_lng)
-        seconds = foo(minutes)
+        minutes = decimal_to_sixtieth(lat_or_lng)
+        seconds = decimal_to_sixtieth(minutes)
         return "{}° {}'{}''".format(int(lat_or_lng), int(minutes), int(seconds))
 
     @pyqtProperty(str, notify=lat_changed)
     def lat(self):
-        return self.convert_position(self._lat)
+        return self.convert_position(self._lat) + " " + cardinal_direction(self._lat, 'N', 'S') 
 
     @lat.setter
     def lat(self, value):
@@ -41,7 +47,7 @@ class Position(Qt.QQuickItem):
 
     @pyqtProperty(str, notify=lng_changed)
     def lng(self):
-        return self.convert_position(self._lng)
+        return self.convert_position(self._lng) + " " + cardinal_direction(self._lng, 'E', 'W')
 
     @lng.setter
     def lng(self, value):

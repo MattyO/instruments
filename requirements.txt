@@ -1,3 +1,4 @@
 bjsonrpc
-pubsub
 nose
+lettuce
+pqaut
