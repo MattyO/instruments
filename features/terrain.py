@@ -18,8 +18,3 @@ def before_all():
 def after_all(*args, **kwargs):
     subprocess.Popen.kill(world.application)
 
-
-@before.each_step
-def before_each_step(step):
-    time.sleep(1)
-

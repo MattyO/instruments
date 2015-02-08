@@ -11,8 +11,8 @@ import screens.src.wind_direction
 import screens.src.wind_speed
 import screens.src.compass
 import screens.src.map
-import screens.src.mark_form
 import screens.src.bearing
+import forms.src.mark_form
 import events
 import pqaut.server
 
@@ -35,8 +35,8 @@ def run():
     Qt.qmlRegisterType(screens.src.wind_direction.WindDirection, 'Screens', 1, 0, 'WindDirection')
     Qt.qmlRegisterType(screens.src.compass.Compass,              'Screens', 1, 0, 'Compass')
     Qt.qmlRegisterType(screens.src.map.Map,                      'Screens', 1, 0, 'Map')
-    Qt.qmlRegisterType(screens.src.mark_form.MarkForm,           'Screens', 1, 0, 'MarkForm')
     Qt.qmlRegisterType(screens.src.bearing.Bearing,              'Screens', 1, 0, 'Bearing')
+    Qt.qmlRegisterType(forms.src.mark_form.MarkForm,             'Screens', 1, 0, 'MarkForm')
 
     engine = Qt.QQmlEngine()
     component = Qt.QQmlComponent(engine)

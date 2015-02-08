@@ -3,7 +3,6 @@ Feature: Bearing
   In order to go the right direction
   I want to see the bearing towards the next mark
 
-  @wip
   Scenario: Entering a Mark
     Given the app is running
     And my position is 81.6697 W 41.4822 N
@@ -14,6 +13,7 @@ Feature: Bearing
     And I press Submit
     Then I see the bearing 25
 
+  @skip
   Scenario: Position Changes
     Given the app is running
     And my position is 81.23 W 41.123 N
@@ -27,6 +27,7 @@ Feature: Bearing
     And my position is 81.23 W 41.123 N
     Then I see the bearing 223
 
+  @skip
   Scenario: Passing marks
     Given the app is running
     And my position is 81.23 W 41.123 N
