@@ -62,5 +62,14 @@ MarkForm{
       }
       onClicked: root.submit(lat_text.text, lng_text.text)
     }
+    Button {
+      text: "Cancel"
+      style: ButtonStyle {
+        background: Rectangle {
+          color: "red"
+        }
+      }
+      onClicked: dialog.visible = false
+    }
   }
 }
