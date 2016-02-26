@@ -12,8 +12,8 @@ class Compass(Qt.QQuickItem):
         pubsub.ps.change_position.connect(self.update)
 
     def update(self, data):
-        if 'heading' in data:
-            self.heading = data.get('heading', 0)
+        if 'track' in data:
+            self.heading = round(data.get('track', 0))
 
     @Qt.pyqtProperty(float, notify=heading_changed)
     def heading(self):

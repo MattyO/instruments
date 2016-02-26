@@ -17,8 +17,8 @@ class Heading(Qt.QQuickItem):
 
 
     def update(self, data):
-        if 'heading' in data:
-            self.heading = data.get('heading', 0)
+        if 'track' in data:
+            self.heading = round(data.get('track', 0))
 
     @pyqtProperty(float, notify=heading_changed)
     def heading(self):

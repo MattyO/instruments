@@ -24,8 +24,8 @@ class Position(Qt.QQuickItem):
     def update(self, data):
         if 'lat' in data:
             self.lat= data.get('lat', 0)
-        if 'lng' in data:
-            self.lng= data.get('lng', 0)
+        if 'lon' in data:
+            self.lng= data.get('lon', 0)
 
     def convert_position(self, lat_or_lng):
         lat_or_lng = abs(lat_or_lng)

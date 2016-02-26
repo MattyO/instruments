@@ -14,7 +14,7 @@ import screens.src.map
 import screens.src.bearing
 import forms.src.mark_form
 import events
-import pqaut.server
+#import pqaut.server
 
 import events
 
@@ -48,9 +48,10 @@ def run():
     for error in component.errors():
         print error.description()
     window.show()
-    pqaut.server.start_automation_server()
+    #pqaut.server.start_automation_server()
 
     t = events.QSensorThread()
+
     t.start()
     sys.exit(app.exec_())
 

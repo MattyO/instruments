@@ -1,6 +1,5 @@
 import PyQt5.Qt as Qt
 
-from pqaut.server import get_root_widget, find_widget_in
 import pubsub
 
 class MarkForm(Qt.QQuickItem):

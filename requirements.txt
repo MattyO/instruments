@@ -2,3 +2,4 @@ bjsonrpc
 nose
 lettuce
 pqaut
+smbus

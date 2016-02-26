@@ -48,7 +48,6 @@ Window {
     anchors.fill: parent
     Rectangle {
       color: 'black'
-      opacity: .8
       anchors.fill: parent
     }
 
@@ -85,17 +84,10 @@ Window {
 
         Bearing {}
 
-        WindDirection {}
+        Heading {}
 
       }
     }
 
-    Item{
-      Layout.fillWidth: true
-      Layout.fillHeight: true
-      Map {
-        anchors.fill: parent
-      }
-    }
   }
 }
